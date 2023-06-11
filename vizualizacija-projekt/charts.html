@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/d3@5.6.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="title">Nobel Prize Winners Data Visualization</h1>
+    </div>
+      <br>
+      <label for="chartCategories">Category:</label>
+      <select id="chartCategories">
+        <option value="all">all categories</option>
+        <option value="physics">physics</option>
+        <option value="chemistry">chemistry</option>
+        <option value="medicine">medicine</option>
+        <option value="peace">peace</option>
+        <option value="literature">literature</option>
+        <option value="economics">economics</option>
+      </select>
+      <a href="index.html"><button id="button">Map</button></a>
+      <br><br>
+    <div id="piechartContainer">
+      <svg id="piechart"></svg>
+    </div>
+    <div id="densitychartContainer">
+      <svg id="densitychart"></svg>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
