@@ -1,6 +1,5 @@
 (function (d3, topojson) {
-    'use strict';
-    
+
     var width=screen.width;
     var height=500;
   
@@ -35,6 +34,7 @@
             .append('path')
             .attr('class', 'country')
             .attr('d', pathGenerator)
+            .style('transition', "all 0.4s ease-in-out")
             .attr('fill', function(d) {
                 var country = nobelData.find(winner => winner.bornCountry == countryName[d.id]);
                 if(country) {
@@ -46,7 +46,7 @@
             .on("click", onClickAll)
             .append('title').text(d => countryName[d.id]);
 
-      chooseMapCategory.on('change', () => {
+      chooseMapCategory.on("change", () => {
         d3.select("#textContainer").html("");
         const chosenMapCategory = chooseMapCategory.property('value');
         updateMap(chosenMapCategory);
@@ -78,7 +78,7 @@
         }
       }
 
-    chooseChartCategory.on('change', () => {
+    chooseChartCategory.on("change", () => {
         const chosenChartCategory = chooseChartCategory.property('value');
         updateCharts(chosenChartCategory);
     });
@@ -131,8 +131,8 @@
       
         // Generate the arcs
         var arc = d3.arc()
-          .innerRadius(0)
-          .outerRadius(radius);
+        .innerRadius(0)
+        .outerRadius(radius);
       
         // Generate groups
         var arcs = cg.selectAll("g.pie")
@@ -209,7 +209,7 @@
         // Plot the area
         densitychart.append("path")
           .attr("class", "mypath")
-          .datum(density)
+          .datum(density)  
           .attr("fill", "#eb8e84")
           .attr("opacity", ".8")
           .attr("stroke", "#000")
@@ -242,6 +242,7 @@
           .attr("text-anchor", "middle")
           .style("font-size", "16px")
           .text("Age Distribution of Nobel Prize Awardees");
+
       }
 
 // Function to compute density
