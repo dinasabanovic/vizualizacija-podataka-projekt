@@ -34,7 +34,7 @@
             .append('path')
             .attr('class', 'country')
             .attr('d', pathGenerator)
-            .style('transition', "all 0.4s ease-in-out")
+            .style('transition', "all 0.5s ease-in-out")
             .attr('fill', function(d) {
                 var country = nobelData.find(winner => winner.bornCountry == countryName[d.id]);
                 if(country) {
